@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  
+  --color-brand-accent: var(--accent);
+  --color-brand-accent-hover: var(--accent-hover);
+  
+  --color-surface-secondary: var(--bg-secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  /* Fonts */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
+  
+  /* Motion & Transitions */
+  --default-transition-duration: var(--duration-normal);
+  --default-transition-timing-function: var(--ease-out);
+}
+
+:root {
+  /* Color System */
+  /* Warm cream/off-white background */
+  --bg-primary: #F9F7F1;
+  --bg-secondary: #F0EDE4;
+  
+  /* Deep espresso brown primary text */
+  --text-primary: #362A25;
+  --text-secondary: #7A726E;
+  --text-tertiary: #A39B97;
+  
+  /* Borders */
+  --border-subtle: #E8E3DA;
+  --border-strong: #D1C9BD;
+  
+  /* Earthy accent */
+  --accent: #B85F45;
+  --accent-hover: #A04E35;
+
+  /* Motion System */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Elements */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Primitives */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Component Primitives */
+
+/* Links */
+.link-editorial {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-strong);
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.link-editorial:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-primary);
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: pointer;
+  /* Avoid excessive rounded corners */
+  border-radius: 2px;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-strong);
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
