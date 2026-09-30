@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import ServicesClient from "./ServicesClient";
 
 export const metadata: Metadata = {
-  title: "Services — Emeya Zion",
-  description: "Web Design, Graphic Design, and Media Buying services focused on helping businesses build a stronger digital presence and reach more customers.",
+  title: "Services — SYNDORA | Marketing & Digital Solutions",
+  description: "Explore SYNDORA's digital solutions, currently specialized in custom website design and development, landing pages, e-commerce, and maintenance. Founded by Emeya Zion.",
 };
 
 export default function ServicesPage() {

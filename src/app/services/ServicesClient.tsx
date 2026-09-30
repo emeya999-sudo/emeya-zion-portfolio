@@ -4,8 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useInView } from "@/hooks/useInView";
 
-// A reusable fade-in component for smooth scroll animations
-function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
+function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const { ref, isInView } = useInView({ threshold: 0.1, triggerOnce: true });
   return (
     <div
@@ -21,231 +20,288 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export default function ServicesClient() {
+  const websiteTypes = [
+    {
+      num: "01",
+      title: "Business Websites",
+      desc: "Clean, professional websites tailored for corporate firms, schools, hospitality venues, and service professionals who need an established digital presence.",
+      features: [
+        "Company & Service Overviews",
+        "Clear Information Structure",
+        "Direct Contact Pathways",
+        "Mobile-Responsive Design"
+      ],
+    },
+    {
+      num: "02",
+      title: "Landing Pages",
+      desc: "Focused single-page websites designed around a specific product, event, or campaign, structured to present the offer clearly and encourage inquiry.",
+      features: [
+        "Clear Value Proposition",
+        "Simple Layout & Hierarchy",
+        "Direct Call to Action",
+        "Fast Mobile Loading"
+      ],
+    },
+    {
+      num: "03",
+      title: "E-commerce Websites",
+      desc: "Online shopping and ordering experiences that make it simple for customers to browse dishes, products, or collections and place orders smoothly.",
+      features: [
+        "Product & Menu Showcases",
+        "Order & Cart Flows",
+        "WhatsApp / Direct Ordering",
+        "Mobile-First Layout"
+      ],
+    },
+    {
+      num: "04",
+      title: "Website Maintenance",
+      desc: "Ongoing support, technical updates, performance tune-ups, and content adjustments to keep your website looking sharp, secure, and functioning properly.",
+      features: [
+        "Content & Layout Adjustments",
+        "Speed & Performance Checks",
+        "Mobile Testing & Bug Fixes",
+        "Domain & Hosting Assistance"
+      ],
+    },
+  ];
+
+  const standards = [
+    {
+      title: "Custom UI/UX Design",
+      desc: "Each layout is custom-designed around your business goals, content, and branding, avoiding cookie-cutter templates.",
+    },
+    {
+      title: "Mobile-First Responsiveness",
+      desc: "The majority of web visitors browse on smartphones. Your website will feel natural, clean, and intuitive across all screen sizes.",
+    },
+    {
+      title: "Direct Contact Integration",
+      desc: "Quick one-tap links to WhatsApp, phone calls, and email so prospective clients can reach you with minimum friction.",
+    },
+    {
+      title: "Fast Loading Performance",
+      desc: "Built with clean, lightweight Next.js and React code for swift page loads and smooth browsing on any network.",
+    },
+    {
+      title: "Clear Content Hierarchy",
+      desc: "Structured typography and thoughtful spacing that guide readers naturally through what you offer and how to reach you.",
+    },
+    {
+      title: "Clean Search Foundation",
+      desc: "Semantic markup, sensible meta tags, and optimized asset loading that set your site up well for search engines.",
+    },
+  ];
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "Discovery & Scope",
+      desc: "We discuss what your business does, who your customers are, the pages you need, and what you want the website to achieve.",
+    },
+    {
+      step: "02",
+      title: "Structure & Content",
+      desc: "We define the site map, organize the sections, and establish the visual hierarchy so key information is effortless to find.",
+    },
+    {
+      step: "03",
+      title: "Design & Development",
+      desc: "I build the website with clean, modern code and responsive layouts, sharing interactive progress along the way.",
+    },
+    {
+      step: "04",
+      title: "Testing & Launch",
+      desc: "We test on real mobile devices, connect your domain name, verify contact forms, and launch your site smoothly.",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "What is SYNDORA?",
+      a: "SYNDORA is a marketing and digital solutions company founded by Emeya Zion. While our scope covers broader digital solutions, our active service focus is delivering custom website design and development.",
+    },
+    {
+      q: "Who will I work with on my project?",
+      a: "You work directly with founder Emeya Zion from start to finish — ensuring clear communication, focused design, and dependable development without middlemen.",
+    },
+    {
+      q: "Do you work with independent and growing businesses?",
+      a: "Yes. Most of our client work is with independent businesses, schools, restaurants, and founders looking for a clean, credible web presence.",
+    },
+    {
+      q: "How long does a website project usually take?",
+      a: "Most projects take between 2 to 4 weeks depending on the number of pages, content readiness, and review speed.",
+    },
+    {
+      q: "Can you help update or redesign an existing website?",
+      a: "Yes. If your current site is outdated, slow, or difficult to use on mobile phones, we can rebuild it with a clean, modern architecture.",
+    },
+    {
+      q: "Will the website work properly on smartphones?",
+      a: "Yes. Every website is built mobile-first to ensure it looks and performs reliably on phones, tablets, and desktop computers.",
+    },
+    {
+      q: "How do we get started?",
+      a: "Head to the Contact page, share brief details about your business and goals, and we can discuss the project scope and next steps.",
+    },
+  ];
+
   return (
     <main className="flex-1 flex flex-col bg-background overflow-hidden">
-      
       {/* 1. HERO */}
-      <section className="pt-32 pb-24 md:pt-40 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <FadeIn>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] tracking-tight max-w-4xl mb-8">
-            I help businesses grow through digital.
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8">
+            <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
+            <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
+              SYNDORA &middot; Marketing &amp; Digital Solutions
+            </span>
+            <span className="hidden sm:inline text-xs text-text-tertiary">&bull;</span>
+            <span className="text-xs tracking-wider uppercase text-text-tertiary">
+              Founded by Emeya Zion
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.08] tracking-tight max-w-4xl mb-8">
+            Websites designed to help businesses establish a credible presence.
           </h1>
         </FadeIn>
         <FadeIn delay={150}>
-          <p className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-2xl mb-12">
-            Websites that convert. Visuals that communicate. Advertising that gets your business noticed.
+          <p className="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mb-12">
+            SYNDORA is a marketing and digital solutions company founded by Emeya Zion. Currently, our core focus is delivering clean, responsive, and dependable websites that represent your business well and make it easy for customers to get in touch.
           </p>
         </FadeIn>
         <FadeIn delay={300} className="flex flex-col sm:flex-row gap-5">
           <Link href="/contact" className="btn-primary w-full sm:w-auto text-center">
-            Let's Work Together
+            Start a Website Project
           </Link>
           <Link href="/#work" className="btn-secondary w-full sm:w-auto text-center">
-            View My Work
+            View Case Studies
           </Link>
         </FadeIn>
       </section>
 
-      {/* 2. SERVICES OVERVIEW */}
+      {/* 2. THE SERVICES I OFFER */}
       <section className="py-24 bg-surface-secondary/30 border-y border-border-subtle">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-32">
-          
-          {/* SERVICE 01 — WEB DESIGN */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1">
-              <div className="relative w-full rounded-sm overflow-hidden bg-background">
-                <video
-                  src="/videos/web-design.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto object-contain block"
-                />
-              </div>
-            </FadeIn>
-            <FadeIn className="flex flex-col items-start order-1 lg:order-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-text-tertiary mb-4">Service 01</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">Web Design</h2>
-              <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                I build modern websites that make businesses look credible, communicate clearly, and turn visitors into customers.
-              </p>
-              
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 w-full">
-                {["Business websites", "Landing pages", "Portfolio websites", "Restaurant websites", "School websites", "Service-business websites", "Ecommerce experiences", "Responsive mobile design", "Conversion-focused layouts"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <span className="w-1 h-1 rounded-full bg-brand-accent flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <FadeIn className="max-w-2xl mb-16">
+            <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
+              Core Services
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-4">
+              What I design and build.
+            </h2>
+            <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+              Whether you need a full business website, a campaign landing page, an online catalog, or ongoing support, each project is handled with direct communication and care.
+            </p>
+          </FadeIn>
 
-              <div className="p-6 bg-background border border-border-subtle rounded-sm mb-10 w-full">
-                <h3 className="text-xs font-bold tracking-widest uppercase text-foreground mb-2">The Outcome</h3>
-                <p className="text-text-secondary font-medium italic">
-                  "A stronger online presence that helps customers understand and trust the business."
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {websiteTypes.map((item, i) => (
+              <FadeIn key={i} delay={i * 80} className="bg-background border border-border-subtle p-8 rounded-sm flex flex-col justify-between hover:border-border-strong transition-colors">
+                <div>
+                  <span className="text-xs font-serif italic text-brand-accent mb-3 block">
+                    {item.num}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-serif text-foreground mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                </div>
 
-              <Link href="/contact" className="btn-primary text-center">
-                Start a Web Project
-              </Link>
-            </FadeIn>
-          </div>
-
-          {/* SERVICE 02 — GRAPHIC DESIGN */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="flex flex-col items-start">
-              <span className="text-xs font-semibold tracking-widest uppercase text-text-tertiary mb-4">Service 02</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">Graphic Design</h2>
-              <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                Visuals that make your business easier to notice, understand, and remember.
-              </p>
-              
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 w-full">
-                {["Social media graphics", "Advertising creatives", "YouTube thumbnails", "Promotional designs", "Product advertising", "Marketing materials", "Brand visuals"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <span className="w-1 h-1 rounded-full bg-brand-accent flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="p-6 bg-background border border-border-subtle rounded-sm mb-10 w-full">
-                <h3 className="text-xs font-bold tracking-widest uppercase text-foreground mb-2">The Outcome</h3>
-                <p className="text-text-secondary font-medium italic">
-                  "Better visual communication that helps a business compete for attention."
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <Link href="/contact" className="btn-primary text-center">
-                  Start a Design Project
-                </Link>
-                <Link href="/work/graphic-design" className="btn-secondary text-center">
-                  View Design Work
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={150}>
-              <div className="relative w-full rounded-sm overflow-hidden bg-background">
-                <video
-                  src="/videos/graphic-design.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto object-contain block"
-                />
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* SERVICE 03 — MEDIA BUYING */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <FadeIn className="order-2 lg:order-1">
-              <div className="relative w-full rounded-sm overflow-hidden bg-background">
-                <img
-                  src="/images/media-buying.webp"
-                  alt="Media Buying Visualization"
-                  className="w-full h-auto object-contain block"
-                />
-              </div>
-            </FadeIn>
-            <FadeIn className="flex flex-col items-start order-1 lg:order-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-text-tertiary mb-4">Service 03</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-6">Media Buying</h2>
-              <p className="text-lg text-text-secondary leading-relaxed mb-8">
-                I help businesses put their offers in front of the right people through paid digital advertising.
-              </p>
-              
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 w-full">
-                {["Campaign setup", "Audience targeting", "Ad creative coordination", "Campaign monitoring", "Budget allocation", "Performance analysis", "Testing and optimization"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <span className="w-1 h-1 rounded-full bg-brand-accent flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="p-6 bg-background border border-border-subtle rounded-sm mb-10 w-full">
-                <h3 className="text-xs font-bold tracking-widest uppercase text-foreground mb-2">The Outcome</h3>
-                <p className="text-text-secondary font-medium italic">
-                  "More targeted attention for the products and services that matter to the business."
-                </p>
-              </div>
-
-              <Link href="/contact" className="btn-primary text-center">
-                Start an Advertising Project
-              </Link>
-            </FadeIn>
+                <div className="pt-6 border-t border-border-subtle/80">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-text-tertiary block mb-3">
+                    Key Deliverables
+                  </span>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {item.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-center gap-2.5 text-xs text-text-secondary">
+                        <span className="w-1 h-1 rounded-full bg-brand-accent flex-shrink-0" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
           </div>
 
         </div>
       </section>
 
-      {/* 3. THE DIFFERENCE */}
-      <section className="py-24 px-6 lg:px-8 max-w-5xl mx-auto w-full text-center">
-        <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-12">One business. Three growth levers.</h2>
+      {/* 3. QUALITY STANDARDS */}
+      <section className="py-24 px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <FadeIn className="max-w-3xl mb-16">
+          <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
+            Quality Standard
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-foreground mb-6">
+            What every website includes.
+          </h2>
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+            I don&apos;t cut corners with bloated page builders or slow templates. Every build is treated with careful attention to speed, readability, and user experience.
+          </p>
         </FadeIn>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
-          <FadeIn delay={100} className="p-8 border border-border-subtle rounded-sm">
-            <h3 className="text-lg font-bold text-foreground mb-4">Web Design</h3>
-            <p className="text-text-secondary leading-relaxed">Builds the digital foundation.</p>
-          </FadeIn>
-          <FadeIn delay={200} className="p-8 border border-border-subtle rounded-sm">
-            <h3 className="text-lg font-bold text-foreground mb-4">Graphic Design</h3>
-            <p className="text-text-secondary leading-relaxed">Makes the business visually competitive.</p>
-          </FadeIn>
-          <FadeIn delay={300} className="p-8 border border-border-subtle rounded-sm">
-            <h3 className="text-lg font-bold text-foreground mb-4">Media Buying</h3>
-            <p className="text-text-secondary leading-relaxed">Brings targeted attention to the offer.</p>
-          </FadeIn>
-        </div>
 
-        <FadeIn delay={400} className="inline-flex items-center justify-center gap-4 py-4 px-8 bg-surface-secondary/50 rounded-full">
-          <span className="font-bold text-sm tracking-widest uppercase text-foreground">Attention</span>
-          <span className="text-brand-accent">&rarr;</span>
-          <span className="font-bold text-sm tracking-widest uppercase text-foreground">Trust</span>
-          <span className="text-brand-accent">&rarr;</span>
-          <span className="font-bold text-sm tracking-widest uppercase text-foreground">Action</span>
-        </FadeIn>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {standards.map((std, i) => (
+            <FadeIn key={i} delay={i * 80} className="p-8 border border-border-subtle rounded-sm bg-surface-secondary/20">
+              <span className="w-2 h-2 rounded-full bg-brand-accent block mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-3">
+                {std.title}
+              </h3>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {std.desc}
+              </p>
+            </FadeIn>
+          ))}
+        </div>
       </section>
 
-      {/* 4. WHO I WORK WITH */}
+      {/* 4. THE DIFFERENCE (WHY CUSTOM MATTERS) */}
       <section className="py-24 bg-foreground text-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-16 lg:gap-24">
-          <div className="flex-1">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+          <div className="lg:w-5/12">
             <FadeIn>
-              <h2 className="text-3xl md:text-5xl font-serif mb-8">Built for businesses that want to grow.</h2>
-              <p className="text-lg text-background/80 leading-relaxed max-w-xl">
-                I work with businesses, founders, and organizations that need a stronger digital presence.
+              <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
+                The Approach
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-6 leading-tight">
+                Why a custom website makes a difference.
+              </h2>
+              <p className="text-base sm:text-lg text-background/80 leading-relaxed mb-8">
+                Your website is often the first place a potential client checks before deciding whether to trust your business. A clean, tailored build makes that decision easy.
+              </p>
+              <Link href="/contact" className="btn-primary inline-block text-center">
+                Let&apos;s Build Yours
+              </Link>
+            </FadeIn>
+          </div>
+
+          <div className="lg:w-7/12 flex flex-col gap-8">
+            <FadeIn delay={100} className="border-l-2 border-brand-accent pl-6">
+              <h3 className="text-xl font-serif text-background mb-2">Authentic Credibility</h3>
+              <p className="text-sm sm:text-base text-background/80 leading-relaxed">
+                Visitors notice when a website is built with care. A custom layout signals that you take your business seriously, setting you apart from competitors using generic templates.
+              </p>
+            </FadeIn>
+            <FadeIn delay={200} className="border-l-2 border-brand-accent pl-6">
+              <h3 className="text-xl font-serif text-background mb-2">Built for Your Audience</h3>
+              <p className="text-sm sm:text-base text-background/80 leading-relaxed">
+                Every headline, section, and button is organized around how your actual customers browse and what they need to know before contacting you.
+              </p>
+            </FadeIn>
+            <FadeIn delay={300} className="border-l-2 border-brand-accent pl-6">
+              <h3 className="text-xl font-serif text-background mb-2">Clean, Reliable Code</h3>
+              <p className="text-sm sm:text-base text-background/80 leading-relaxed">
+                Built with modern React and Next.js standards without fragile plugin dependencies, ensuring dependable performance and fast load times.
               </p>
             </FadeIn>
           </div>
-          <div className="flex-1">
-            <FadeIn delay={150}>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-background/90">
-                {[
-                  "Restaurants & food businesses",
-                  "Schools & educational organizations",
-                  "Hotels & hospitality",
-                  "Personal brands",
-                  "Professional services",
-                  "Ecommerce businesses",
-                  "Local businesses",
-                  "Startups"
-                ].map((type, i) => (
-                  <li key={i} className="flex items-center gap-3 font-medium">
-                    <span className="w-1 h-1 rounded-full bg-brand-accent flex-shrink-0" />
-                    {type}
-                  </li>
-                ))}
-              </ul>
-            </FadeIn>
-          </div>
+
         </div>
       </section>
 
@@ -253,22 +309,17 @@ export default function ServicesClient() {
       <section className="py-24 px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <FadeIn>
           <div className="flex items-center gap-6 mb-16">
-            <h2 className="text-2xl md:text-3xl font-serif text-foreground">Process</h2>
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground">How We Work Together</h2>
             <div className="h-px flex-1 bg-border-subtle" />
           </div>
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {[
-            { step: "01", title: "Discover", desc: "Understand the business, audience, offer, and goals." },
-            { step: "02", title: "Plan", desc: "Define the right digital, design, or advertising approach." },
-            { step: "03", title: "Build", desc: "Design and implement the solution." },
-            { step: "04", title: "Launch & Improve", desc: "Launch, review performance, and refine where necessary." },
-          ].map((item, i) => (
+          {processSteps.map((item, i) => (
             <FadeIn key={i} delay={i * 100} className="flex flex-col border-t-2 border-foreground pt-6">
               <span className="text-sm font-bold tracking-widest text-brand-accent mb-4">{item.step}</span>
-              <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
-              <p className="text-text-secondary leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+              <p className="text-sm text-text-secondary leading-relaxed">{item.desc}</p>
             </FadeIn>
           ))}
         </div>
@@ -278,30 +329,15 @@ export default function ServicesClient() {
       <section className="py-24 bg-surface-secondary/30 border-y border-border-subtle">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground text-center mb-16">Questions & Answers</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground text-center mb-16">
+              Frequently Asked Questions
+            </h2>
           </FadeIn>
           <div className="flex flex-col gap-10">
-            {[
-              {
-                q: "Do you work with small businesses?",
-                a: "Yes. Projects can be scoped around the business's current needs and budget."
-              },
-              {
-                q: "Can I hire you for just one service?",
-                a: "Yes. Web Design, Graphic Design, and Media Buying can be handled independently."
-              },
-              {
-                q: "Can I combine multiple services?",
-                a: "Yes. Combining services can make sense when a business needs both a stronger digital presence and better marketing."
-              },
-              {
-                q: "How do I start a project?",
-                a: "Use the Contact page and describe what you need. We'll discuss the project, scope, budget, and next steps."
-              }
-            ].map((faq, i) => (
-              <FadeIn key={i} delay={i * 50} className="border-b border-border-strong pb-8 last:border-0">
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-4">{faq.q}</h3>
-                <p className="text-text-secondary leading-relaxed text-lg">{faq.a}</p>
+            {faqs.map((faq, i) => (
+              <FadeIn key={i} delay={i * 50} className="border-b border-border-subtle pb-8 last:border-0">
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{faq.q}</h3>
+                <p className="text-text-secondary leading-relaxed text-base">{faq.a}</p>
               </FadeIn>
             ))}
           </div>
@@ -311,18 +347,21 @@ export default function ServicesClient() {
       {/* 7. FINAL CTA */}
       <section className="py-32 px-6 lg:px-8 max-w-4xl mx-auto w-full text-center">
         <FadeIn>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-[1.1] tracking-tight mb-8">
-            Ready to make your business impossible to ignore?
+          <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
+            Start With SYNDORA
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-[1.1] tracking-tight mb-8">
+            Ready to build a clean, effective website for your business?
           </h2>
-          <p className="text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl mx-auto">
-            Tell me what you're building, what isn't working, and where you want to go.
+          <p className="text-lg sm:text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl mx-auto">
+            Tell me about your business, what you want the website to achieve, and let&apos;s discuss how SYNDORA can bring your digital presence to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link href="/contact" className="btn-primary w-full sm:w-auto text-center">
               Start a Project
             </Link>
             <Link href="/#work" className="btn-secondary w-full sm:w-auto text-center">
-              View My Work
+              View Case Studies
             </Link>
           </div>
         </FadeIn>

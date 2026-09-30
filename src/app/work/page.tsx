@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function WebDesignRedirect() {
+export default function WorkPage() {
   redirect("/work/web-development");
 }

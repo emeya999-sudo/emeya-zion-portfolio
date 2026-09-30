@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { CONTACT_CONFIG, getContactFormSubmitUrl, getCallMeUrl } from "@/lib/contact";
 
 const servicesList = [
-  "Web Design",
-  "UI/UX Design",
-  "Web App Development",
-  "Graphic Design",
-  "Media Buying",
+  "Business Website",
+  "Landing Page",
+  "E-commerce Website",
+  "Website Maintenance",
+  "Website Redesign",
 ];
 
 export default function ContactPage() {
@@ -70,14 +70,13 @@ export default function ContactPage() {
         {/* Left / Intro */}
         <div className="flex flex-col">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-6">
-            Contact Me
+            Contact SYNDORA
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-[1.1] tracking-tight mb-8">
-            Have a project in mind?<br />
-            Let's make it happen.
+            Let&apos;s discuss your website project.
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed max-w-md mb-12">
-            I partner with businesses, ambitious founders, and creative individuals to design and build digital experiences that demand attention and drive results.
+            SYNDORA is a marketing and digital solutions company founded by Emeya Zion. Share your project details below, and let&apos;s discuss the scope, timeline, and next steps.
           </p>
 
           <div className="flex flex-col gap-6 mt-auto border-t border-border-subtle pt-12">

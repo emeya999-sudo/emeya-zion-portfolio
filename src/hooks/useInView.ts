@@ -1,10 +1,19 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, RefObject } from "react";
 
-export function useInView<T extends HTMLElement = any>(options = { threshold: 0.1, triggerOnce: true }) {
+export type UseInViewOptions = {
+  threshold?: number;
+  triggerOnce?: boolean;
+};
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export function useInView<T extends HTMLElement = any>(
+  options: UseInViewOptions = {}
+): { ref: RefObject<T | any>; isInView: boolean } {
+  const { threshold = 0.1, triggerOnce = true } = options;
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef<T | null>(null);
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     const currentRef = ref.current;
@@ -13,13 +22,13 @@ export function useInView<T extends HTMLElement = any>(options = { threshold: 0.
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsInView(true);
-        if (options.triggerOnce) {
+        if (triggerOnce) {
           observer.unobserve(currentRef);
         }
-      } else if (!options.triggerOnce) {
+      } else if (!triggerOnce) {
         setIsInView(false);
       }
-    }, options);
+    }, { threshold });
 
     observer.observe(currentRef);
 
@@ -28,7 +37,7 @@ export function useInView<T extends HTMLElement = any>(options = { threshold: 0.
         observer.unobserve(currentRef);
       }
     };
-  }, [options.threshold, options.triggerOnce]);
+  }, [threshold, triggerOnce]);
 
   return { ref, isInView };
 }

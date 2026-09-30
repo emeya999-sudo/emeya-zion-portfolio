@@ -17,8 +17,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Emeya Zion — Creative Developer & Digital Designer",
-  description: "Portfolio of Emeya Zion, Creative Developer and Digital Designer.",
+  title: "SYNDORA — Marketing & Digital Solutions | Founded by Emeya Zion",
+  description: "SYNDORA provides marketing and digital solutions, currently specialized in custom website design and development for businesses. Founded by Emeya Zion.",
 };
 
 export default function RootLayout({
