@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useInView } from "@/hooks/useInView";
-import { reviews } from "@/data/reviews";
 import { ReviewModal } from "@/components/ReviewModal";
+import { supabase } from "@/lib/supabase";
 
 function FadeIn({
   children,
@@ -29,8 +29,42 @@ function FadeIn({
   );
 }
 
+interface Review {
+  id: string;
+  name: string;
+  rating: number;
+  experience: string;
+  created_at: string;
+  projectTitle?: string;
+  role?: string;
+  company?: string;
+}
+
 export default function ReviewsClient() {
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchReviews = useCallback(async () => {
+    const { data, error } = await supabase
+      .from("reviews")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching reviews:", error);
+    }
+
+    if (data) {
+      setReviews(data);
+    }
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchReviews();
+  }, [fetchReviews]);
 
   const expectations = [
     {
@@ -93,7 +127,13 @@ export default function ReviewsClient() {
 
       {/* 2. REVIEWS LIST OR TASTEFUL EMPTY STATE */}
       <section className="py-20 md:py-28 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-border-subtle">
-        {reviews.length > 0 ? (
+        {isLoading ? (
+          <FadeIn>
+            <div className="py-12 flex justify-center text-text-tertiary text-sm tracking-widest uppercase">
+              Loading client reflections...
+            </div>
+          </FadeIn>
+        ) : reviews.length > 0 ? (
           <div className="flex flex-col">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {reviews.slice(0, 4).map((rev) => (
@@ -108,13 +148,13 @@ export default function ReviewsClient() {
                     </span>
                   )}
                   <p className="text-lg sm:text-xl font-serif text-foreground leading-relaxed italic">
-                    &ldquo;{rev.content}&rdquo;
+                    &ldquo;{rev.experience}&rdquo;
                   </p>
                 </div>
                 <div className="pt-6 border-t border-border-subtle/80 flex items-center justify-between">
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-                      {rev.clientName}
+                      {rev.name}
                     </h3>
                     {(rev.role || rev.company) && (
                       <p className="text-xs text-text-tertiary mt-0.5">
@@ -122,9 +162,9 @@ export default function ReviewsClient() {
                       </p>
                     )}
                   </div>
-                  {rev.date && (
+                  {rev.created_at && (
                     <span className="text-xs text-text-tertiary font-mono">
-                      {rev.date}
+                      {new Date(rev.created_at).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' })}
                     </span>
                   )}
                 </div>
@@ -247,7 +287,10 @@ export default function ReviewsClient() {
       {/* INTERACTIVE REVIEW MODAL */}
       <ReviewModal
         isOpen={isReviewModalOpen}
-        onClose={() => setIsReviewModalOpen(false)}
+        onClose={() => {
+          setIsReviewModalOpen(false);
+          fetchReviews();
+        }}
       />
     </main>
   );

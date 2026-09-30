@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { supabase } from "@/lib/supabase";
 
 interface ReviewModalProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
   const [experience, setExperience] = useState("");
   const [errors, setErrors] = useState<{ name?: string; rating?: string; experience?: string }>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const initialFocusRef = useRef<HTMLInputElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -28,6 +31,8 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
       setExperience("");
       setErrors({});
       setIsSubmitted(false);
+      setIsSubmitting(false);
+      setSubmitError(null);
     }, 250);
   }, [onClose]);
 
@@ -60,7 +65,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
 
   const isFormValid = name.trim().length > 0 && rating > 0 && experience.trim().length > 0;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const newErrors: { name?: string; rating?: string; experience?: string } = {};
@@ -81,6 +86,24 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     }
 
     setErrors({});
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    const { error } = await supabase.from("reviews").insert([
+      {
+        name: name.trim(),
+        rating,
+        experience: experience.trim(),
+      },
+    ]);
+
+    setIsSubmitting(false);
+
+    if (error) {
+      setSubmitError("Failed to submit review. Please try again.");
+      return;
+    }
+
     setIsSubmitted(true);
   };
 
@@ -295,17 +318,26 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
               </div>
 
               {/* Submit CTA */}
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col gap-3">
+                {submitError && (
+                  <div className="p-3 bg-brand-accent/10 border border-brand-accent/20 rounded-xs text-brand-accent text-sm text-center">
+                    {submitError}
+                  </div>
+                )}
                 <button
                   type="submit"
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || isSubmitting}
                   className={`w-full text-center py-3.5 px-6 font-medium text-xs sm:text-sm uppercase tracking-wider transition-all duration-normal rounded-xs ${
-                    isFormValid
+                    isFormValid && !isSubmitting
                       ? "btn-primary"
                       : "bg-surface-secondary text-text-tertiary border border-border-subtle cursor-not-allowed opacity-70"
                   }`}
                 >
-                  SUBMIT REVIEW <span aria-hidden="true" className="ml-1">&rarr;</span>
+                  {isSubmitting ? (
+                    "SUBMITTING..."
+                  ) : (
+                    <>SUBMIT REVIEW <span aria-hidden="true" className="ml-1">&rarr;</span></>
+                  )}
                 </button>
               </div>
             </form>
