@@ -153,5 +153,26 @@ export const projects: Project[] = [
       section1: "/projects/blessed-baidoo/section-01.webp",
       section2: "/projects/blessed-baidoo/section-02.webp"
     },
+  },
+  {
+    id: "eddydave-global-services",
+    title: "Eddydave Global Services",
+    category: "Real Estate · Property Website",
+    tagline: "Connecting buyers and sellers with residential and commercial properties across Nigeria.",
+    problem: "Buyers and sellers need a clear way to explore property offerings and contact the agency to confirm details.",
+    solution: "A real-estate website presenting featured property listings, service information, and contact options.",
+    description: "A website for Eddydave Global Services Limited, presenting residential and commercial property offerings across Nigeria alongside featured listings, service details, and contact information.",
+    role: "Website Design & Development",
+    deliverables: [
+      "Real Estate Website",
+      "Featured Property Listings",
+      "Real Estate Services Overview",
+      "Contact Information"
+    ],
+    link: "https://eddydave-global-services.vercel.app/",
+    images: {
+      hero: "/projects/eddydave-global-services/hero.png",
+      section1: "",
+    },
   }
 ];

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "All Reviews — SYNDORA",
-  description: "Read all genuine client reviews for SYNDORA's custom website design and development services.",
+  title: "All Reviews — Emeya Zion",
+  description: "Read genuine client reviews for Emeya Zion's custom website design and development services.",
 };
 
 export const dynamic = "force-dynamic";

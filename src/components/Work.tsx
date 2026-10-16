@@ -243,7 +243,7 @@ export function Work() {
           <div className="flex items-center gap-4 sm:gap-6 mb-6">
             <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
-              SYNDORA &middot; Selected Work
+              Emeya Zion &middot; Selected Work
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-foreground leading-[1.12] tracking-tight mb-6">
@@ -260,17 +260,17 @@ export function Work() {
         {/* Bottom Work Conversion Banner */}
         <div className="mt-8 md:mt-16 p-8 sm:p-12 lg:p-16 bg-surface-secondary/50 border border-border-subtle rounded-sm text-center max-w-4xl mx-auto flex flex-col items-center">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4">
-            SYNDORA Digital Solutions
+            Emeya Zion &middot; Digital Solutions
           </span>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-foreground mb-4">
             Looking for a clean, professional website for your business?
           </h3>
           <p className="text-base text-text-secondary max-w-xl mb-8 leading-relaxed">
-            Whether launching a new business or redesigning an existing site, SYNDORA builds custom web experiences tailored directly to your goals.
+            Whether launching a new business or redesigning an existing site, Emeya Zion builds custom web experiences tailored directly to your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="btn-primary text-center">
-              Work With SYNDORA
+              Work With Emeya Zion
             </Link>
             <Link href="/services" className="btn-secondary text-center">
               Explore Services &amp; Process

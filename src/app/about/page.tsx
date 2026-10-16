@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
-  title: "About SYNDORA — Marketing & Digital Solutions | Founded by Emeya Zion",
-  description: "Learn more about SYNDORA, a marketing and digital solutions company founded by Emeya Zion, currently specialized in custom website design and development.",
+  title: "About Emeya Zion — Marketing & Digital Solutions",
+  description: "Learn more about Emeya Zion's marketing and digital solutions, currently specialized in custom website design and development.",
 };
 
 export default function AboutPage() {

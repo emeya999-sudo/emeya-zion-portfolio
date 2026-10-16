@@ -4,9 +4,9 @@ import { projects } from "@/data/projects";
 import { CaseStudyCard } from "@/components/Work";
 
 export const metadata: Metadata = {
-  title: "Web Development Case Studies — SYNDORA",
+  title: "Web Development Case Studies — Emeya Zion",
   description:
-    "Custom websites designed and developed by SYNDORA, founded by Emeya Zion. Case studies across hospitality, education, and service businesses.",
+    "Custom websites designed and developed by Emeya Zion. Case studies across hospitality, education, and service businesses.",
 };
 
 export default function WebDevelopmentPage() {
@@ -34,7 +34,7 @@ export default function WebDevelopmentPage() {
           <div className="flex items-center gap-4 sm:gap-6 mb-6">
             <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
-              SYNDORA &middot; Web Development
+              Emeya Zion &middot; Web Development
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-foreground leading-[1.12] tracking-tight mb-6">
@@ -59,19 +59,19 @@ export default function WebDevelopmentPage() {
         {/* Bottom Work Conversion Banner */}
         <div className="mt-28 md:mt-36 p-8 sm:p-12 lg:p-16 bg-surface-secondary/50 border border-border-subtle rounded-sm text-center max-w-4xl mx-auto flex flex-col items-center">
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4">
-            SYNDORA Digital Solutions
+            Emeya Zion &middot; Digital Solutions
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-foreground mb-4">
             Looking for a clean, professional website for your business?
           </h2>
           <p className="text-base text-text-secondary max-w-xl mb-8 leading-relaxed">
             Whether launching a new business or redesigning an existing site,
-            SYNDORA builds custom web experiences tailored directly to your
+            Emeya Zion builds custom web experiences tailored directly to your
             goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="btn-primary text-center">
-              Work With SYNDORA
+              Work With Emeya Zion
             </Link>
             <Link href="/services" className="btn-secondary text-center">
               Explore Services &amp; Process

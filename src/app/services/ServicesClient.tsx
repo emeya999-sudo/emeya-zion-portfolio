@@ -119,8 +119,8 @@ export default function ServicesClient() {
 
   const faqs = [
     {
-      q: "What is SYNDORA?",
-      a: "SYNDORA is a marketing and digital solutions company founded by Emeya Zion. While our scope covers broader digital solutions, our active service focus is delivering custom website design and development.",
+      q: "Who is Emeya Zion?",
+      a: "Emeya Zion provides marketing and digital solutions, with a current focus on custom website design and development.",
     },
     {
       q: "Who will I work with on my project?",
@@ -156,7 +156,7 @@ export default function ServicesClient() {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8">
             <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
-              SYNDORA &middot; Marketing &amp; Digital Solutions
+              Emeya Zion &middot; Marketing &amp; Digital Solutions
             </span>
             <span className="hidden sm:inline text-xs text-text-tertiary">&bull;</span>
             <span className="text-xs tracking-wider uppercase text-text-tertiary">
@@ -169,7 +169,7 @@ export default function ServicesClient() {
         </FadeIn>
         <FadeIn delay={150}>
           <p className="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mb-12">
-            SYNDORA is a marketing and digital solutions company founded by Emeya Zion. Currently, our core focus is delivering clean, responsive, and dependable websites that represent your business well and make it easy for customers to get in touch.
+            Emeya Zion provides marketing and digital solutions. The current focus is delivering clean, responsive, and dependable websites that represent your business well and make it easy for customers to get in touch.
           </p>
         </FadeIn>
         <FadeIn delay={300} className="flex flex-col sm:flex-row gap-5">
@@ -348,13 +348,13 @@ export default function ServicesClient() {
       <section className="py-32 px-6 lg:px-8 max-w-4xl mx-auto w-full text-center">
         <FadeIn>
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
-            Start With SYNDORA
+            Start With Emeya Zion
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-[1.1] tracking-tight mb-8">
             Ready to build a clean, effective website for your business?
           </h2>
           <p className="text-lg sm:text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl mx-auto">
-            Tell me about your business, what you want the website to achieve, and let&apos;s discuss how SYNDORA can bring your digital presence to life.
+            Tell me about your business, what you want the website to achieve, and let&apos;s discuss how Emeya Zion can bring your digital presence to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link href="/contact" className="btn-primary w-full sm:w-auto text-center">

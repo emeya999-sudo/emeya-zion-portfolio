@@ -18,7 +18,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
               <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
               <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
-                SYNDORA &middot; Marketing &amp; Digital Solutions
+                Emeya Zion &middot; Marketing &amp; Digital Solutions
               </span>
               <span className="hidden sm:inline text-xs text-text-tertiary">&bull;</span>
               <span className="text-xs tracking-wider uppercase text-text-tertiary">
@@ -33,7 +33,7 @@ export function Hero() {
 
             {/* Supporting Pitch */}
             <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mb-10 sm:mb-12">
-              At SYNDORA, founded by Emeya Zion, I partner directly with business owners and founders to create clean, responsive websites that represent their brand with credibility, communicate clearly, and make it effortless for customers to get in touch.
+              I partner directly with business owners and founders to create clean, responsive websites that represent their brand with credibility, communicate clearly, and make it effortless for customers to get in touch.
             </p>
 
             {/* CTAs */}
@@ -59,7 +59,7 @@ export function Hero() {
                 Website Design &amp; Development
               </h2>
               <p className="text-sm text-text-secondary leading-relaxed mt-1">
-                While SYNDORA encompasses broader digital solutions, my active offer is focused strictly on delivering high-quality, custom websites.
+                While my work encompasses broader digital solutions, my active offer is focused strictly on delivering high-quality, custom websites.
               </p>
             </div>
 

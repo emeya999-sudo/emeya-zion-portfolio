@@ -37,7 +37,7 @@ export default function AboutClient() {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8">
             <div className="h-px w-8 sm:w-16 bg-brand-accent" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-text-secondary">
-              SYNDORA &middot; Marketing &amp; Digital Solutions
+              Emeya Zion &middot; Marketing &amp; Digital Solutions
             </span>
             <span className="hidden sm:inline text-xs text-text-tertiary">&bull;</span>
             <span className="text-xs tracking-wider uppercase text-text-tertiary">
@@ -50,7 +50,7 @@ export default function AboutClient() {
         </FadeIn>
         <FadeIn delay={150}>
           <p className="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mb-12">
-            SYNDORA is a marketing and digital solutions company founded by Emeya Zion. While our broader scope encompasses digital solutions, our current core offer is specialized in custom Website Design &amp; Development — creating clean, fast, and responsive websites that establish immediate credibility and make it effortless for customers to get in touch.
+            Emeya Zion provides marketing and digital solutions, with a current focus on custom Website Design &amp; Development — creating clean, fast, and responsive websites that establish immediate credibility and make it effortless for customers to get in touch.
           </p>
         </FadeIn>
         <FadeIn delay={300} className="flex flex-col sm:flex-row gap-5">
@@ -84,7 +84,7 @@ export default function AboutClient() {
                 When a website is confusing, outdated, or difficult to use on a smartphone, potential customers simply move on.
               </p>
               <p className="pt-4 font-medium text-foreground">
-                That is why every website designed and developed under SYNDORA is centered on:
+                That is why every website I design and develop is centered on:
                 <span className="font-serif text-2xl sm:text-3xl mt-4 block text-brand-accent">
                   Thoughtful Design + Clean Code + Clear Communication
                 </span>
@@ -261,12 +261,12 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* 6. WORKING WITH SYNDORA */}
+      {/* 6. WORKING WITH EMEYA ZION */}
       <section className="py-24 bg-surface-secondary/30 border-y border-border-subtle">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-center gap-6 mb-16">
-              <h2 className="text-2xl md:text-3xl font-serif text-foreground">Working with SYNDORA</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-foreground">Working with Emeya Zion</h2>
               <div className="h-px flex-1 bg-border-subtle" />
             </div>
           </FadeIn>
@@ -304,13 +304,13 @@ export default function AboutClient() {
       <section className="py-32 px-6 lg:px-8 max-w-4xl mx-auto w-full text-center">
         <FadeIn>
           <span className="text-xs font-semibold tracking-widest uppercase text-brand-accent mb-4 block">
-            SYNDORA
+            Emeya Zion
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-[1.1] tracking-tight mb-8">
             Have a business that needs a better website?
           </h2>
           <p className="text-lg sm:text-xl text-text-secondary leading-relaxed mb-12 max-w-2xl mx-auto">
-            Let&apos;s talk about what you&apos;re building, what isn&apos;t working with your current setup, and how SYNDORA can solve it.
+            Let&apos;s talk about what you&apos;re building, what isn&apos;t working with your current setup, and how Emeya Zion can help.
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link href="/contact" className="btn-primary w-full sm:w-auto text-center">

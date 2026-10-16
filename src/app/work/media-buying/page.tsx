@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Media Buying | SYNDORA",
+  title: "Media Buying | Emeya Zion",
   description: "Paid advertising campaigns built around reaching the right audience, generating attention, and driving measurable action.",
 };
 

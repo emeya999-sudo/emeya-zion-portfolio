@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
@@ -17,8 +18,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "SYNDORA — Marketing & Digital Solutions | Founded by Emeya Zion",
-  description: "SYNDORA provides marketing and digital solutions, currently specialized in custom website design and development for businesses. Founded by Emeya Zion.",
+  title: "Emeya Zion — Marketing & Digital Solutions",
+  description: "Marketing and digital solutions by Emeya Zion, currently specialized in custom website design and development for businesses.",
 };
 
 export default function RootLayout({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="antialiased min-h-screen flex flex-col">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

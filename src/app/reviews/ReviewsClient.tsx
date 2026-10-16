@@ -103,7 +103,7 @@ export default function ReviewsClient() {
         <FadeIn delay={150}>
           <p className="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mb-10 sm:mb-12">
             Genuine feedback and reflections from businesses and founders who have
-            partnered with SYNDORA on custom website design and development projects.
+            partnered with Emeya Zion on custom website design and development projects.
             If you have collaborated with us, tap below to share your experience.
           </p>
         </FadeIn>
@@ -195,7 +195,7 @@ export default function ReviewsClient() {
               </h2>
 
               <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8 max-w-2xl">
-                At SYNDORA, we prioritize honest collaboration and measurable craftsmanship.
+                Emeya Zion prioritizes honest collaboration and measurable craftsmanship.
                 We do not publish fabricated ratings, synthetic testimonials, or placeholder quotes.
                 As clients share direct feedback on their website design and development experience,
                 their verified reviews will be documented here.
@@ -221,7 +221,7 @@ export default function ReviewsClient() {
         )}
       </section>
 
-      {/* 3. WHAT CLIENTS CAN EXPECT WORKING WITH SYNDORA */}
+      {/* 3. WHAT CLIENTS CAN EXPECT WORKING WITH EMEYA ZION */}
       <section className="py-20 md:py-28 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-border-subtle">
         <FadeIn className="max-w-3xl mb-16 md:mb-20">
           <div className="flex items-center gap-3 sm:gap-4 mb-4">
@@ -231,7 +231,7 @@ export default function ReviewsClient() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-foreground leading-[1.12] tracking-tight mb-6">
-            What You Can Expect Partnering with SYNDORA
+            What You Can Expect Partnering with Emeya Zion
           </h2>
           <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
             Our reputation is built project by project through clear expectations,
@@ -271,11 +271,11 @@ export default function ReviewsClient() {
           </h2>
           <p className="text-base text-text-secondary max-w-xl mb-8 leading-relaxed">
             Whether launching a new brand or redesigning an existing website,
-            SYNDORA works with you directly from concept to launch.
+            Emeya Zion works with you directly from concept to launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="btn-primary text-center">
-              Work With SYNDORA
+              Work With Emeya Zion
             </Link>
             <Link href="/services" className="btn-secondary text-center">
               Explore Services &amp; Process

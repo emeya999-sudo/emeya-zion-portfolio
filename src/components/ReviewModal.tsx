@@ -152,7 +152,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
             </h2>
 
             <p className="text-sm sm:text-base text-text-secondary max-w-sm mb-8 leading-relaxed">
-              Your review has been received. We genuinely appreciate you taking the time to share direct feedback about collaborating with SYNDORA.
+              Your review has been received. We genuinely appreciate you taking the time to share direct feedback about collaborating with Emeya Zion.
             </p>
 
             <button
@@ -177,7 +177,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
                 Leave a Review
               </h2>
               <p className="text-xs sm:text-sm text-text-secondary mt-1.5 leading-relaxed">
-                Tell us about your experience working with SYNDORA on your website project.
+                Tell us about your experience working with Emeya Zion on your website project.
               </p>
             </div>
 
@@ -304,7 +304,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
                     setExperience(e.target.value);
                     if (errors.experience) setErrors((prev) => ({ ...prev, experience: undefined }));
                   }}
-                  placeholder="Tell us about your experience working with SYNDORA..."
+                  placeholder="Tell us about your experience working with Emeya Zion..."
                   className="w-full bg-surface-secondary/40 border border-border-strong p-3.5 rounded-xs text-sm sm:text-base text-foreground placeholder:text-text-tertiary focus:outline-none focus:border-brand-accent transition-colors resize-y leading-relaxed"
                   aria-required="true"
                   aria-invalid={!!errors.experience}

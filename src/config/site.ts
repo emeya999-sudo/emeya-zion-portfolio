@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: "SYNDORA",
+  name: "Emeya Zion",
   tagline: "Marketing & Digital Solutions",
   founder: "Emeya Zion",
-  title: "SYNDORA — Marketing & Digital Solutions",
+  title: "Emeya Zion — Marketing & Digital Solutions",
   currentFocus: "Website Design & Development",
   whatsappUrl: "https://wa.me/2438148306236",
   whatsappNumber: "+243 8148 306 236",
